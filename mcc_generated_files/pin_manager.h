@@ -396,6 +396,7 @@
 */
 #define IO_RB15_SetLow()           (_LATB15 = 0)
 #define IO_RB13_SetLow()           (_LATB13 = 0)
+
 /**
   @Summary
     Toggles the GPIO pin, RB15, using LATB15.
@@ -447,7 +448,6 @@
 
 */
 #define IO_RB15_GetValue()         _RB15
-#define IO_RB13_GetValue()         _RB13
 /**
   @Summary
     Configures the GPIO pin, RB15, as an input.
@@ -472,7 +472,6 @@
 
 */
 #define IO_RB15_SetDigitalInput()  (_TRISB15 = 1)
-#define IO_RB13_SetDigitalInput()  (_TRISB13 = 1)
 /**
   @Summary
     Configures the GPIO pin, RB15, as an output.

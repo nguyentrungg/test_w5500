@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/system.c mcc_generated_files/traps.c mcc_generated_files/pin_manager.c mcc_generated_files/mcc.c mcc_generated_files/spi1.c mcc_generated_files/clock.c mcc_generated_files/interrupt_manager.c main.c Socket.c W5500.c Wizchip_Conf.c mcc_generated_files/tmr1.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/system.c mcc_generated_files/traps.c mcc_generated_files/pin_manager.c mcc_generated_files/mcc.c mcc_generated_files/spi1.c mcc_generated_files/clock.c mcc_generated_files/interrupt_manager.c mcc_generated_files/tmr1.c mcc_generated_files/uart1.c main.c Socket.c W5500.c Wizchip_Conf.c my_debug.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Socket.o ${OBJECTDIR}/W5500.o ${OBJECTDIR}/Wizchip_Conf.o ${OBJECTDIR}/mcc_generated_files/tmr1.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/spi1.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Socket.o.d ${OBJECTDIR}/W5500.o.d ${OBJECTDIR}/Wizchip_Conf.o.d ${OBJECTDIR}/mcc_generated_files/tmr1.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/uart1.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Socket.o ${OBJECTDIR}/W5500.o ${OBJECTDIR}/Wizchip_Conf.o ${OBJECTDIR}/my_debug.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/spi1.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/tmr1.o.d ${OBJECTDIR}/mcc_generated_files/uart1.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Socket.o.d ${OBJECTDIR}/W5500.o.d ${OBJECTDIR}/Wizchip_Conf.o.d ${OBJECTDIR}/my_debug.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Socket.o ${OBJECTDIR}/W5500.o ${OBJECTDIR}/Wizchip_Conf.o ${OBJECTDIR}/mcc_generated_files/tmr1.o
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/spi1.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/tmr1.o ${OBJECTDIR}/mcc_generated_files/uart1.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Socket.o ${OBJECTDIR}/W5500.o ${OBJECTDIR}/Wizchip_Conf.o ${OBJECTDIR}/my_debug.o
 
 # Source Files
-SOURCEFILES=mcc_generated_files/system.c mcc_generated_files/traps.c mcc_generated_files/pin_manager.c mcc_generated_files/mcc.c mcc_generated_files/spi1.c mcc_generated_files/clock.c mcc_generated_files/interrupt_manager.c main.c Socket.c W5500.c Wizchip_Conf.c mcc_generated_files/tmr1.c
+SOURCEFILES=mcc_generated_files/system.c mcc_generated_files/traps.c mcc_generated_files/pin_manager.c mcc_generated_files/mcc.c mcc_generated_files/spi1.c mcc_generated_files/clock.c mcc_generated_files/interrupt_manager.c mcc_generated_files/tmr1.c mcc_generated_files/uart1.c main.c Socket.c W5500.c Wizchip_Conf.c my_debug.c
 
 
 
@@ -131,6 +131,18 @@ ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o: mcc_generated_files/interr
 	@${RM} ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/interrupt_manager.c  -o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/mcc_generated_files/tmr1.o: mcc_generated_files/tmr1.c  .generated_files/flags/default/b738f8aeae6d1811f53a106caa558c0efb8b476 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/tmr1.c  -o ${OBJECTDIR}/mcc_generated_files/tmr1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr1.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/mcc_generated_files/uart1.o: mcc_generated_files/uart1.c  .generated_files/flags/default/e24c9905dcc127b85e93aeded7c8f4beeb80d443 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/uart1.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/uart1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/uart1.c  -o ${OBJECTDIR}/mcc_generated_files/uart1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/uart1.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/92d9956f65d63a78f1d2a9f605f55a3aa08354d9 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
@@ -155,11 +167,11 @@ ${OBJECTDIR}/Wizchip_Conf.o: Wizchip_Conf.c  .generated_files/flags/default/53e6
 	@${RM} ${OBJECTDIR}/Wizchip_Conf.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Wizchip_Conf.c  -o ${OBJECTDIR}/Wizchip_Conf.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Wizchip_Conf.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/mcc_generated_files/tmr1.o: mcc_generated_files/tmr1.c  .generated_files/flags/default/b738f8aeae6d1811f53a106caa558c0efb8b476 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
-	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o.d 
-	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/tmr1.c  -o ${OBJECTDIR}/mcc_generated_files/tmr1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr1.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+${OBJECTDIR}/my_debug.o: my_debug.c  .generated_files/flags/default/1326b6ad7384c6c60c0bf7155475172264a77bf1 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/my_debug.o.d 
+	@${RM} ${OBJECTDIR}/my_debug.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  my_debug.c  -o ${OBJECTDIR}/my_debug.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/my_debug.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 else
 ${OBJECTDIR}/mcc_generated_files/system.o: mcc_generated_files/system.c  .generated_files/flags/default/48782679095468f013359d3dfa687eab168e0274 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -204,6 +216,18 @@ ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o: mcc_generated_files/interr
 	@${RM} ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/interrupt_manager.c  -o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/mcc_generated_files/tmr1.o: mcc_generated_files/tmr1.c  .generated_files/flags/default/f7023dee200fe46c454b2f66270d5c3721b3166 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/tmr1.c  -o ${OBJECTDIR}/mcc_generated_files/tmr1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr1.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/mcc_generated_files/uart1.o: mcc_generated_files/uart1.c  .generated_files/flags/default/80e01972eb203ab4da7ff50f4ec95a44045b0c70 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/uart1.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/uart1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/uart1.c  -o ${OBJECTDIR}/mcc_generated_files/uart1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/uart1.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/8fe425a4ee17ef1f035d50d390d5da0cdd9d15ba .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
@@ -228,11 +252,11 @@ ${OBJECTDIR}/Wizchip_Conf.o: Wizchip_Conf.c  .generated_files/flags/default/5433
 	@${RM} ${OBJECTDIR}/Wizchip_Conf.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  Wizchip_Conf.c  -o ${OBJECTDIR}/Wizchip_Conf.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Wizchip_Conf.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/mcc_generated_files/tmr1.o: mcc_generated_files/tmr1.c  .generated_files/flags/default/f7023dee200fe46c454b2f66270d5c3721b3166 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
-	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o.d 
-	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/tmr1.c  -o ${OBJECTDIR}/mcc_generated_files/tmr1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr1.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+${OBJECTDIR}/my_debug.o: my_debug.c  .generated_files/flags/default/4a450c5f935f0b69b8a00b0f3cc749fda800d0ec .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/my_debug.o.d 
+	@${RM} ${OBJECTDIR}/my_debug.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  my_debug.c  -o ${OBJECTDIR}/my_debug.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/my_debug.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

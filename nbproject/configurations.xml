@@ -15,10 +15,13 @@
         <itemPath>mcc_generated_files/clock.h</itemPath>
         <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
         <itemPath>mcc_generated_files/tmr1.h</itemPath>
+        <itemPath>mcc_generated_files/uart1.h</itemPath>
       </logicalFolder>
       <itemPath>Socket.h</itemPath>
       <itemPath>W5500.h</itemPath>
       <itemPath>Wizchip_Conf.h</itemPath>
+      <itemPath>my_debug.h</itemPath>
+      <itemPath>tcp_udp_server.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -38,11 +41,13 @@
         <itemPath>mcc_generated_files/clock.c</itemPath>
         <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
         <itemPath>mcc_generated_files/tmr1.c</itemPath>
+        <itemPath>mcc_generated_files/uart1.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>Socket.c</itemPath>
       <itemPath>W5500.c</itemPath>
       <itemPath>Wizchip_Conf.c</itemPath>
+      <itemPath>my_debug.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

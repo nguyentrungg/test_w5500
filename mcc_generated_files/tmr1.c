@@ -49,13 +49,15 @@
 
 #include <stdio.h>
 #include "tmr1.h"
+#include "pin_manager.h"
 
 /**
  Section: File specific functions
 */
 void (*TMR1_InterruptHandler)(void) = NULL;
 void TMR1_CallBack(void);
-
+void Delay_ms(unsigned int sec);
+unsigned int count_ms = 0;
 /**
   Section: Data Type Definitions
 */
@@ -92,8 +94,8 @@ void TMR1_Initialize (void)
 {
     //TMR1 0; 
     TMR1 = 0x00;
-    //Period = 0 s; Frequency = 4000000 Hz; PR1 0; 
-    PR1 = 0x00;
+    //Period = 0.001 s; Frequency = 4000000 Hz; PR1 3999; 
+    PR1 = 0xF9F;
     //TCKPS 1:1; TON enabled; TSIDL disabled; TCS FOSC/2; TSYNC disabled; TGATE disabled; 
     T1CON = 0x8000;
 
@@ -103,7 +105,7 @@ void TMR1_Initialize (void)
     }
 
     IFS0bits.T1IF = false;
-    IEC0bits.T1IE = true;
+    //IEC0bits.T1IE = true;
 	
     tmr1_obj.timerElapsed = false;
 
@@ -160,13 +162,19 @@ uint16_t TMR1_Counter16BitGet( void )
 void __attribute__ ((weak)) TMR1_CallBack(void)
 {
     // Add your custom callback code here
+    count_ms = count_ms - 1;
 }
-
+void Delay_ms(unsigned int sec){
+    IEC0bits.T1IE = true;
+    count_ms = sec - 1;
+    while(count_ms > 0);
+    IEC0bits.T1IE = false;
+}
 void  TMR1_SetInterruptHandler(void (* InterruptHandler)(void))
 { 
-    IEC0bits.T1IE = false;
+    //IEC0bits.T1IE = false;
     TMR1_InterruptHandler = InterruptHandler; 
-    IEC0bits.T1IE = true;
+    //IEC0bits.T1IE = true;
 }
 
 void TMR1_Start( void )

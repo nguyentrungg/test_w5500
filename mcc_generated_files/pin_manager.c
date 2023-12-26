@@ -66,7 +66,7 @@ void PIN_MANAGER_Initialize (void)
     LATC = 0x0000;
     LATD = 0x0000;
     LATE = 0x0000;
-    LATF = 0x0000;
+    LATF = 0x0008;
     LATG = 0x0000;
 
     /****************************************************************************
@@ -77,7 +77,7 @@ void PIN_MANAGER_Initialize (void)
     TRISC = 0x700A;
     TRISD = 0xFFFF;
     TRISE = 0x03FF;
-    TRISF = 0x013F;
+    TRISF = 0x013B;
     TRISG = 0x03CF;
 
     /****************************************************************************
@@ -116,10 +116,12 @@ void PIN_MANAGER_Initialize (void)
      ***************************************************************************/
     __builtin_write_OSCCONL(OSCCON & 0xbf); // unlock PPS
 
-    RPOR0bits.RP0R = 0x0009;    //RB0->SPI1:SS1OUT
+    RPOR0bits.RP1R = 0x0007;    //RB1->SPI1:SDO1
     RPINR20bits.SDI1R = 0x000D;    //RB2->SPI1:SDI1
     RPOR3bits.RP7R = 0x0008;    //RB7->SPI1:SCK1OUT
-    RPOR0bits.RP1R = 0x0007;    //RB1->SPI1:SDO1
+    RPOR0bits.RP0R = 0x0009;    //RB0->SPI1:SS1OUT
+    RPINR18bits.U1RXR = 0x0024;    //RA14->UART1:U1RX
+    RPOR15bits.RP30R = 0x0003;    //RF2->UART1:U1TX
 
     __builtin_write_OSCCONL(OSCCON | 0x40); // lock PPS
 }
